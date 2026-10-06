@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite Paper VIII (Version 2.0), the implementation source of truth, using this article citation. The listed author is the paper author; this does not assert repository authorship."
+title: "Information-Causality Field and the Unified Field Theory Based on 11-Dimensional T^3 Torus Fractal Geometry -- Paper VIII: Dual-Layer Topological Neuromorphic and Signal Processing Architecture: Z_N Phase-Ring Hardware Isomorphism and Integrated Point-Line-Plane (PLP) Decision Mechanics"
+authors:
+  - family-names: Kim
+    given-names: Chul
+doi: 10.5281/zenodo.22782241
+version: "2.0"
+date-released: 2026-09-16
+url: https://doi.org/10.5281/zenodo.22782241
+preferred-citation:
+  type: article
+  title: "Information-Causality Field and the Unified Field Theory Based on 11-Dimensional T^3 Torus Fractal Geometry -- Paper VIII: Dual-Layer Topological Neuromorphic and Signal Processing Architecture: Z_N Phase-Ring Hardware Isomorphism and Integrated Point-Line-Plane (PLP) Decision Mechanics"
+  authors:
+    - family-names: Kim
+      given-names: Chul
+  year: 2026
+  doi: 10.5281/zenodo.22782241
+  url: https://doi.org/10.5281/zenodo.22782241
+  version: "2.0"

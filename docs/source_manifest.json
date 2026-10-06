@@ -1,0 +1,24 @@
+{
+  "checked_date": "2026-10-06",
+  "timezone": "Asia/Seoul",
+  "implementation_source": {
+    "filename": "Paper_VIII_Dual_Layer_Topological_Neuromorphic_Architecture.pdf",
+    "doi": "10.5281/zenodo.22782241",
+    "record_url": "https://zenodo.org/records/22782241",
+    "version": "2.0",
+    "publication_date": "2026-09-16",
+    "author": "Kim, Chul",
+    "sha256": "d743c111e16aef248092c8bb077ae6edf79942103f6810c3bc4180e3e57faefc",
+    "md5": "d647612f24a16fde19e42a5f63cdee33",
+    "zenodo_file_md5_match": true,
+    "paper_viii_pdf_pages": [1, 2, 3, 4, 5],
+    "background_paper_ix_appendix_pdf_pages": [6, 7, 8, 9],
+    "zenodo_paper_license_metadata": "cc-by-4.0",
+    "repository_license": "to be confirmed by the author"
+  },
+  "doi_resolution": [
+    {"doi": "10.5281/zenodo.22782241", "http_status": 200, "record_url": "https://zenodo.org/records/22782241", "role": "main implementation source"},
+    {"doi": "10.5281/zenodo.22726125", "http_status": 200, "record_url": "https://zenodo.org/records/22726125", "role": "theoretical background only"},
+    {"doi": "10.5281/zenodo.23004844", "http_status": 200, "record_url": "https://zenodo.org/records/23004844", "role": "theoretical background only"}
+  ]
+}
