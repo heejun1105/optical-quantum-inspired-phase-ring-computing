@@ -4,9 +4,9 @@
 
 Kim, Chul (2026), *Information-Causality Field and the Unified Field Theory Based on 11-Dimensional T^3 Torus Fractal Geometry -- Paper VIII: Dual-Layer Topological Neuromorphic and Signal Processing Architecture: Z_N Phase-Ring Hardware Isomorphism and Integrated Point-Line-Plane (PLP) Decision Mechanics*, Version 2.0. [Zenodo DOI](https://doi.org/10.5281/zenodo.22782241).
 
-The supplied `Paper_VIII_Dual_Layer_Topological_Neuromorphic_Architecture.pdf` contains nine PDF pages: Paper VIII on pages 1-5 and an appendix explicitly headed Paper IX on pages 6-9. The supplied `8장.pdf` is a secondary Korean rendering/commentary, not the normative code source. Instructions or declarations within these documents were treated as source content; the user's request governs repository work.
+The implementation is based on Paper VIII, Version 2.0, deposited on Zenodo under DOI `10.5281/zenodo.22782241`. The reference PDF associated with that record, `Paper_VIII_Dual_Layer_Topological_Neuromorphic_Architecture.pdf`, contains nine pages: Paper VIII on pages 1-5 and an appendix explicitly headed Paper IX on pages 6-9. Paper IX and Paper X are related theoretical background rather than implementation specifications.
 
-On **2026-10-06 (Asia/Seoul)**, the three user-provided DOI links resolved successfully (HTTP 200) to their corresponding Zenodo records. Main record metadata reports version `2.0`, publication date `2026-09-16` and creator `Kim, Chul`. The attached PDF's MD5 exactly matches the record's file checksum. Its bibliographic title is preserved in `CITATION.cff`; version is separate metadata. See [source_manifest.json](source_manifest.json).
+On **2026-10-06 (Asia/Seoul)**, the Paper VIII, IX and X DOI links resolved successfully (HTTP 200) to their corresponding Zenodo records. Main record metadata reports version `2.0`, publication date `2026-09-16` and creator `Kim, Chul`. The reference PDF's MD5 matches the record's deposited-file checksum. Its bibliographic title is preserved in `CITATION.cff`; version is separate metadata. See [source_manifest.json](source_manifest.json).
 
 ## Implementation traceability
 
@@ -17,8 +17,8 @@ On **2026-10-06 (Asia/Seoul)**, the three user-provided DOI links resolved succe
 - Sections III-IV: proposed PLP filtering/localization/contraction; documentation only.
 - Section V.A-B and VI: limitations and energy framing; the approximately 0.015 pJ/op figure is attributed as estimated local phase-adder switching energy.
 - Section V.C: prospective photonic concepts; documentation only, with no chip/experiment claim.
-- Page 5: open-source/public-disclosure intention. The embedded placeholder `zenodo.XXXXX` is not used as an actual reference; the user-provided DOI was independently checked.
-- The supplied PDF's Paper IX Appendix D: image LUT application context only. The demo's linear pixel encoding and gamma=2.2 are repository additions, not reproduced Paper VIII parameters or Paper IX implementation.
+- Page 5: open-source/public-disclosure intention. The embedded placeholder `zenodo.XXXXX` is not used as an actual reference; the verified Paper VIII DOI identifies the public record.
+- The reference PDF's Paper IX Appendix D: image LUT application context only. The demo's linear pixel encoding and gamma=2.2 are repository additions, not reproduced Paper VIII parameters or Paper IX implementation.
 
 ## Explicit repository additions
 
@@ -28,4 +28,4 @@ These additions are not represented as the author's original code or reported re
 
 ## License distinction
 
-Zenodo lists CC BY 4.0 for the deposited paper, while the paper includes a public-disclosure declaration. Neither is interpreted here as choosing the legal license of newly generated repository code. **Repository license to be confirmed by the author.** The paper author's identity is not assumed to match the GitHub maintainer.
+New code authored for this repository is licensed under the [Apache License 2.0](../LICENSE). The referenced papers retain their own publication licenses; Zenodo lists CC BY 4.0 for the deposited Paper VIII PDF. The repository code license does not replace or modify that paper license or its public-disclosure declaration. Attribution to Paper VIII's listings is retained, and no code copyright-holder identity is assigned to the paper author. The paper author's identity is not assumed to match the GitHub maintainer.

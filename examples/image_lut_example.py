@@ -1,6 +1,6 @@
 """Repository-added illustrative gamma lookup; not a PLP ISP reproduction.
 
-The attached PDF discusses image LUTs in its Paper IX appendix (Appendix D),
+The Paper VIII Zenodo reference PDF discusses image LUTs in its Paper IX appendix (Appendix D),
 which is background only. The encoder and gamma=2.2 are demo choices, not
 Paper VIII implementation parameters or claims about image quality.
 """

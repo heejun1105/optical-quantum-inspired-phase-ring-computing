@@ -14,10 +14,16 @@ Executed locally on **2026-10-06 (Asia/Seoul)** using Windows, Python **3.12.2**
 - `python python/compare_rtl_reference.py --exhaustive`: all **1,048,576** 10-bit and **4,194,304** 11-bit input pairs passed through the actual clocked RTL PIM cells; every emitted phase index and signed Q15 LUT word matched Python (**5,242,880 total**).
 - Both README Python examples ran, including tests from an unrelated working directory.
 - `CITATION.cff` validated against **CFF 1.2.0** using `cffconvert`; its full title, DOI, author, version and date were checked against Zenodo metadata.
-- All three supplied DOI links resolved with HTTP 200. The supplied main PDF's MD5 matched Zenodo's deposited file checksum.
+- The Paper VIII, IX and X DOI links resolved with HTTP 200. The reference Paper VIII PDF's MD5 matched Zenodo's deposited-file checksum.
 - The full source-file inventory and local Markdown links were checked; no missing local link targets were found.
 
 The two comparison modes use separate `sampled/` and `exhaustive/` output directories to keep their vector/result files distinct.
+
+## Release preparation recheck
+
+On **2026-10-06 (Asia/Seoul)**, after the licensing and public-documentation updates, `verify_phase_ring.py`, `generate_lut.py --check`, and `pytest -q` were rerun: both rings and all committed LUT words passed, and **40 tests passed with no skips**. The default Python-to-RTL comparison again matched **6,184** 10-bit and **8,232** 11-bit vectors. Standalone Icarus testbenches again passed **2,054 paired PIM cycles** and **5,242,880 exhaustive RTL arithmetic pairs**.
+
+The earlier exhaustive clocked-PIM comparison record above remains unchanged; this documentation recheck did not rerun that optional large comparison. RTL, LUT contents, tests and executable Python behavior were preserved; two Python docstrings were updated for public source attribution. `CITATION.cff` was preserved and validated again against CFF 1.2.0.
 
 ## What these checks establish
 

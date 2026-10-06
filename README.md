@@ -1,8 +1,28 @@
 # Phase-Ring PLP PIM
 
+[![Reference verification](https://github.com/heejun1105/phase-ring-plp-pim/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/heejun1105/phase-ring-plp-pim/actions/workflows/verify.yml?query=branch%3Amain)
+[License: Apache-2.0](LICENSE)
+
 In simple terms, the proposed architecture represents values as phase indices, adds those indices with a small modular adder, and reads the SRAM value at the resulting address. The proposed Point-Line-Plane (PLP) layer filters and contracts higher-dimensional states before the final lookup. This repository provides an executable reference for the phase arithmetic and LUT cell, with documentation of the broader proposal.
 
-The implementation source of truth is **Kim Chul, Paper VIII, Version 2.0 (2026)**: [Dual-Layer Topological Neuromorphic and Signal Processing Architecture](https://doi.org/10.5281/zenodo.22782241). See [source provenance](docs/source_provenance.md) for section/listing references and the exact supplied PDF identity. Paper IX and Paper X are theoretical background, not implementation specifications.
+## Implementation status
+
+**Implemented and verified in simulation:**
+
+- `Z_1024` / `Z_2048` fixed-width modular phase arithmetic and Verilog RTL phase adders.
+- SRAM LUT reference cells and signed Q15 sinusoidal example tables.
+- Python reference model and Python-to-RTL phase-index/LUT-output comparison.
+- Automated tests, including exhaustive arithmetic verification and clock/reset checks.
+
+**Proposed / documented only; not implemented or independently validated:**
+
+- Complete value-to-phase encoding for arbitrary workloads and arbitrary real-valued multiplication.
+- Full PLP hardware and its state-contraction assumptions.
+- Complete neural-network MAC/accumulation architecture.
+- Fabricated PIM chips and photonic integrated-circuit implementations.
+- Fabricated-chip energy/performance measurements and the paper's system-level performance claims.
+
+The implementation source of truth is **Kim Chul, Paper VIII, Version 2.0 (2026)**: [Dual-Layer Topological Neuromorphic and Signal Processing Architecture](https://doi.org/10.5281/zenodo.22782241). See [source provenance](docs/source_provenance.md) for section/listing references and the Zenodo reference PDF identity. Paper IX and Paper X are theoretical background, not implementation specifications.
 
 ## What changes in the proposed data path?
 
@@ -22,7 +42,7 @@ already encoded phase indices -> fixed-width addition
 
 The architecture trades conventional multiplier complexity for phase encoding, integer addition, quantization and memory lookup. The complex unit-phase identity `exp(i*theta_x) * exp(i*theta_w) = exp(i*(theta_x + theta_w))` supports addition of phase angles; it does not by itself reconstruct arbitrary real-valued multiplication or a complete MAC. Encoding, amplitude handling, accumulation and the application-specific LUT must be designed for the workload. No general-purpose encoder or PLP RTL is provided here.
 
-## Implemented and documented scope
+## Reference implementation details
 
 - **Implemented:** `Z_1024` and `Z_2048` arithmetic, 10/11-bit overflow/truncation, signed Q15 sinusoidal example LUTs, SRAM-array lookup and one-clock registered outputs with asynchronous active-low output reset.
 - **Paper-based:** the 10-bit PIM cell preserves Section VII.A Listing 1's ports, 10-bit `local_phase_sum`, 1024 x 16-bit `sram_matrix` and output register behavior; Python follows Listing 2.
@@ -113,7 +133,7 @@ The intended role goes beyond an ordinary standalone filter: select a task-relev
 
 ## Illustrative image lookup
 
-The supplied PDF's Paper IX appendix (Appendix D) describes `RGB / pixel data -> 10-bit Z_1024 phase state -> phase processing -> SRAM LUT`, mentioning tone mapping, gamma correction and color-space transformation. This is background context, not a Paper VIII code specification.
+The reference PDF associated with Paper VIII's Zenodo record includes a Paper IX appendix (Appendix D), which describes `RGB / pixel data -> 10-bit Z_1024 phase state -> phase processing -> SRAM LUT`, mentioning tone mapping, gamma correction and color-space transformation. This is background context, not a Paper VIII code specification.
 
 `examples/image_lut_example.py` demonstrates the address/LUT pattern using an explicitly repository-chosen linear 8-bit-to-10-bit encoding, zero phase offset, and a gamma-2.2 lookup. It does not implement PLP denoising, tone mapping or multi-channel color-space conversion. It produces no PSNR/SSIM, image-quality, throughput or energy benchmark. A production color-space mapping needs application-specific multi-channel encoding and storage; a single per-channel gamma table is not sufficient.
 
@@ -141,7 +161,7 @@ Paper VIII reports approximately **0.015 pJ/op as estimated local phase-adder sw
 
 ```text
 phase-ring-plp-pim/
-  README.md, CITATION.cff, requirements.txt, pytest.ini
+  README.md, LICENSE, CITATION.cff, requirements.txt, pytest.ini
   rtl/          10/11-bit adders and PIM LUT cells
   testbench/    self-checking timing/reset, exhaustive adders, comparison harness
   python/       arithmetic model, LUT tools, verifier, RTL comparison
@@ -154,7 +174,9 @@ phase-ring-plp-pim/
 
 ## Citation, license and contact
 
-Please cite Paper VIII; bibliographic metadata is provided in [CITATION.cff](CITATION.cff). The paper contains an open-source/public-disclosure statement. Its Zenodo record lists CC BY 4.0 for the deposited paper; that metadata is not used here to select a license for the new repository code. **Repository license to be confirmed by the author.** No MIT, GPL, CC0 or other repository license has been assigned.
+Please cite Paper VIII; bibliographic metadata is provided in [CITATION.cff](CITATION.cff).
+
+New code authored for this repository is licensed under the **[Apache License 2.0](LICENSE)**. The referenced research papers remain subject to their own publication licenses; Paper VIII's [Zenodo record](https://zenodo.org/records/22782241) lists **CC BY 4.0** for the deposited paper. The repository code license does not replace or modify the papers' licenses. Attribution to paper-based listings is retained in the source and documentation; no code copyright-holder identity is assigned to the paper author.
 
 For questions regarding the theory presented in the paper, please contact the author at [voodoo6000@daum.net](mailto:voodoo6000@daum.net). The paper author and repository maintainer are separate roles; no identity between them is assumed.
 

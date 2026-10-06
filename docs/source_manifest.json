@@ -14,7 +14,8 @@
     "paper_viii_pdf_pages": [1, 2, 3, 4, 5],
     "background_paper_ix_appendix_pdf_pages": [6, 7, 8, 9],
     "zenodo_paper_license_metadata": "cc-by-4.0",
-    "repository_license": "to be confirmed by the author"
+    "repository_license": "Apache-2.0",
+    "repository_license_scope": "new repository code; paper publication license remains separate"
   },
   "doi_resolution": [
     {"doi": "10.5281/zenodo.22782241", "http_status": 200, "record_url": "https://zenodo.org/records/22782241", "role": "main implementation source"},

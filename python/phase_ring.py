@@ -46,7 +46,7 @@ def phase_add(theta_x: int, theta_w: int, n_mod: int = 1024) -> int:
 def sinusoidal_lut(n_mod: int = 1024) -> tuple[int, ...]:
     """Listing 2's example LUT: trunc(sin(2*pi*k/N)*32767), signed int16.
 
-    NumPy linspace/sin and conversion match the supplied example. This is a
+    NumPy linspace/sin and conversion match the paper's example. This is a
     reference signal LUT, not a general multiplication or production ISP LUT.
     """
     phase_width(n_mod)

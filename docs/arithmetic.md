@@ -19,7 +19,7 @@ Python's arbitrary-width integers do not overflow automatically. `phase_add` fir
 
 ## Q15 example LUT
 
-Section VII.B Listing 2 generates `np.int16(np.sin(np.linspace(0, 2*np.pi, N, endpoint=False)) * 32767)`. The repository retains that expression's semantics: sampling excludes the repeated endpoint, conversion truncates toward zero, and the scale is **32767**, not 32768. Peaks are `+32767` and `-32767`; the table does not contain `-32768`. Quantization is an example convention from the supplied listing, not an application accuracy claim.
+Section VII.B Listing 2 generates `np.int16(np.sin(np.linspace(0, 2*np.pi, N, endpoint=False)) * 32767)`. The repository retains that expression's semantics: sampling excludes the repeated endpoint, conversion truncates toward zero, and the scale is **32767**, not 32768. Peaks are `+32767` and `-32767`; the table does not contain `-32768`. Quantization is an example convention from the paper's listing, not an application accuracy claim.
 
 Files store each signed value as its 16-bit two's-complement hexadecimal word: `32767 -> 7fff`, `-32767 -> 8001`, `-1 -> ffff`. The RTL bus is unsigned; interpret it as signed int16 to compare with Python. There are exactly `N` words, one per address. The strict loader rejects malformed words and incorrect lengths; `--check` also detects altered values.
 

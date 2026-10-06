@@ -20,4 +20,4 @@ A LUT for `D` independent variables with `N` states each can require storage pro
 
 Reading one selected address can be constant-time without proving that an arbitrary high-dimensional function can be represented in constant memory. Independent validation must establish what state information is preserved, which workloads permit contraction, a concrete discrete mapping, its convergence conditions and error bounds. Section V.A acknowledges memory scaling limits. The repository does not assert mathematical or physical proof of PLP, nor that it eliminates general LUT scaling.
 
-Paper IX and Paper X are related theoretical background only. Although the supplied PDF includes a Paper IX appendix, its algorithms and performance predictions are not implementation sources for this repository.
+Paper IX and Paper X are related theoretical background only. Although the reference PDF deposited with Paper VIII includes a Paper IX appendix, its algorithms and performance predictions are not implementation sources for this repository.
